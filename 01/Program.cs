@@ -3,7 +3,7 @@ string input = Console.ReadLine(); // ввод
 
 int number = int.Parse(input); // число
 
-//if (int.Parse (input))
+//if (int.TryParse (input))
 
 int square = number * number; //квадрат
 
