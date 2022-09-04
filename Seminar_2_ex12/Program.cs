@@ -11,4 +11,7 @@ int number2 = int.Parse(Console.ReadLine());
 if (number1 % number2 == 0)
     Console.WriteLine ("Число кратное друг другу");
 else
-    Console.WriteLine ("Число не кратное друг другу");    
+{
+    int a = number1 % number2;
+    Console.WriteLine ($"Число не кратное друг другу, остаток {a}"); 
+}
