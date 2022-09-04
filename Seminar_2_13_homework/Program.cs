@@ -3,20 +3,17 @@
 // 78 - третьей цыфры нет
 // 32679 - 6
 
-// Не доделала, вторая часть задачи вызывает затруднения
 
-Console.WriteLine("Введите заданное число, и я напишу третью цифру заданного числа или сообщу что третьей цифры нет");
-int number=int.Parse(Console.ReadLine());
-if(number< 99)
-{
-     Console.WriteLine($"{number} Третьей цифры нет");
-  
-}
-else
-{
-     Console.WriteLine((number / 10) % 10);
-   
-}
-   
-    
+Console.Write("Введи число: ");
+int anyNumber=int.Parse(Console.ReadLine());
 
+string anyNumberText = Convert.ToString(anyNumber);
+
+if (anyNumberText.Length > 2)
+{
+  Console.WriteLine("третья цифра -> " + anyNumberText[2]);
+}
+else 
+{
+  Console.WriteLine("третьей цифры нет");
+}
