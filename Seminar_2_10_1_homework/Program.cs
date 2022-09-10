@@ -27,7 +27,7 @@ if (quite.KeyChar == 'q') break;
 {
     while (true) {
         Console.WriteLine("  //число для продолжения, или q чтобы выйти");
-        string num = Console.ReadLine();
+        string num = Console.ReadLine()!;
 
         if (num == "q")
         {
