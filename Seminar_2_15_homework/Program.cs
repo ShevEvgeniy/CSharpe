@@ -9,7 +9,7 @@ int dayNumber=int.Parse(Console.ReadLine());
 
 void CheckingTheDayOfTheWeek (int dayNumber) 
 {
-  if (dayNumber == 6 || dayNumber == 7) 
+  if (dayNumber == 6 || dayNumber == 7)  // Оператор || - или
   {
   Console.WriteLine("(этот день выходной) -> да");
   }
