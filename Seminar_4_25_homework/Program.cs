@@ -2,6 +2,7 @@
 //3, 5 -> 243 (3⁵)
 //2, 4 -> 16
 
+
 int NumCheck() //метод проверки на ввод числа
 {
     while (true)
@@ -18,22 +19,25 @@ int NumCheck() //метод проверки на ввод числа
         return isItNum;
     }
 }
-while (true) //Зацикливание программы
-{
-    Console.WriteLine("Какое число будем раскладывать?");
-    string num = NumCheck().ToString();
-    int sum = 0;
-    
-    Console.WriteLine($"Сумма цифр в {num} - >");
 
-
-foreach (char a in num)
+while (true) // Зацикливание программы
 {
-   sum += a - '0';   
-}
-  Console.WriteLine($"{string.Join (" + ", num.ToCharArray ())} = {sum}");
-  
-  //Зацикливание программы
+    Console.WriteLine($"Какое число будем возводить в степень");
+    int numA = NumCheck();
+
+    Console.WriteLine($"В какую степень возводим? {numA}");
+    int numB = NumCheck();
+
+    double result = numA; //=Match.Pow (numA, numB)
+
+    for (int i = 0; i < numB - 1; i++)
+    {
+        result *= numA;
+    }
+
+    Console.WriteLine($"Работаем! {numA} в степень {numB} равно {result}");
+
+     //Зацикливание программы
   Console.WriteLine();
   Console.WriteLine( "Enter чтобы продолжить / q чтобы выйти");
   ConsoleKeyInfo quite = Console.ReadKey();
