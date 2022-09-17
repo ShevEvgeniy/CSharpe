@@ -30,17 +30,6 @@ void PrintArray(int[] arr)
     }
     Console.WriteLine();
 }
-
-bool LookForExact(int[] arr, int exact)
-    {
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] == exact)
-            return true;
-    }
-    return false;
-    }
-
     int[] array = CreateArray(Size);
     PrintArray(array);
     InverseArray(array);
