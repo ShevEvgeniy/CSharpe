@@ -35,7 +35,7 @@ bool LookForExact(int[] arr, int exact)
 
 int[] array = CreateArray (Size);
 Console.WriteLine("Введите число");
-int search = int.Parse(Console.ReadLine());
+int search = int.Parse(Console.ReadLine()!);
 PrintArray(array);
 if (LookForExact((array), search))
 Console.WriteLine($"В данном массиве искомое число {search} присутствует.");
