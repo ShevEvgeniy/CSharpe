@@ -39,8 +39,6 @@ else
     Console.WriteLine("Координаты точки пересечения = ({0} , {1}).", Math.Round(pointX, 1), Math.Round(pointY, 1));
 }
 
-
-
 public record struct Line // y = k * x + b
 {
     public double k;
