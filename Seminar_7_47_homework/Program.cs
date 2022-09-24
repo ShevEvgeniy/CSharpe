@@ -5,35 +5,41 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-Console.WriteLine("введите количество строк");
-int lines = int.Parse(Console.ReadLine()!);
-Console.WriteLine("введите количество столбцов");
-int columns = int.Parse(Console.ReadLine()!);
-double[,] numbers = new double[lines, columns];
-RandomNumbers(numbers);
-PrintArray(numbers);
+int height = EnterInt ("Введите количество строк: ");
+int width = EnterInt ("Введите количество столбцов: ");
 
-void RandomNumbers(double[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
+
+double[ , ] numbers = new double [height, width];
+Fill2DArray (numbers, height, width);
+Print2DArray (numbers, height, width);
+
+
+ int EnterInt (string prompt) 
+ {
+     Console.Write (prompt);
+     return int.Parse (Console.ReadLine ()!);
+ }
+
+
+
+void Fill2DArray (double[, ] numbers, int height, int width) {
+     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+    for (int j = 0; j < width; j++)
         {
-            array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
+        numbers[i, j] = Math.Round(new Random ().NextDouble () * 100, 2, MidpointRounding.AwayFromZero);
         }
     }
 }
 
-void PrintArray(double[,] array)
+void Print2DArray (double[, ] numbers, int height, int width) 
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+     for (int i = 0; i < height; i++) // для каждой строки
     {
-        Console.Write("[ ");
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.Write("]");
-        Console.WriteLine("");
+    for (int j = 0; j < width; j++) // внутри этой строки для каждого столбца
+    {
+        Console.Write ($"{numbers[i, j],6} ");
+    }
+    Console.WriteLine ();
     }
 }
