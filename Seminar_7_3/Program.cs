@@ -20,7 +20,8 @@ int[ , ] numbers = new int[height, width];
 Fill2DArray (numbers, height, width);
 Print2DArray (numbers, height, width);
 Change2DArray (numbers, height, width);
-PrintArray (numbers, height, width);
+Console.WriteLine ();
+Print2DArray (numbers, height, width);
  
  int EnterInt (string prompt) 
  {
@@ -60,18 +61,4 @@ void Change2DArray (int[, ] numbers, int height, int width)
             numbers[i, j] = numbers[i, j] * numbers[i, j];
         }
     }
-    
-}
-void PrintArray (int[, ] numbers, int height, int width) 
-{
-    Console.WriteLine ();
-     for (int i = 0; i < height; i++) 
-    {
-    for (int j = 0; j < width; j++) 
-    {
-        Console.Write ($"{numbers[i, j],3} ");
-    }
-    Console.WriteLine ();
-    }
-
 }
