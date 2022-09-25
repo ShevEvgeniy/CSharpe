@@ -10,6 +10,7 @@ Fill2DArray (numbers, height, width);
 Print2DArray (numbers, height, width);
 Console.WriteLine ();
 ChangeRowColumn (numbers, height, width);
+Print2DArray (numbers, height, width);
 
  int EnterInt (string prompt) 
  {
@@ -47,11 +48,14 @@ void ChangeRowColumn(double[,] numbers, int height, int width)
     {
          for (int i = 0; i < height; i++)
         {
-            for (int j = 0; j < width; j++)
+            //for (int j = 0; j < width; j++)
+            for (int j = i; j < width; j++)
+
                 {
-                    Console.Write ($"{numbers[j, i],6} ");
+                    Swap(ref numbers[i, j], ref numbers[j, i]);
+                   
                 }
-            Console.WriteLine();    
+             
         }
     }
     else
@@ -59,3 +63,9 @@ void ChangeRowColumn(double[,] numbers, int height, int width)
         
 }
 
+static void Swap(ref double a, ref double b)
+{
+    double temp = a;
+    a = b;
+    b = temp;
+}
